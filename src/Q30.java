@@ -4,7 +4,7 @@ public class Q30 {
         public static void main(String[] args){
 
         Scanner Teclado = new Scanner(System.in);
-        int conta = 0, soma_idade = 0;
+        int conta = 0, soma_idade = 0, maior, menor;
 
         float media;
 
@@ -25,13 +25,16 @@ public class Q30 {
 
         Teclado.close();
 
-        for(int i = 0; i < conta; i++){
-            for(int j = 0; j < conta - 1; j++){
-                if(arr[j] >= arr[j+1]){
-                    int temp = arr[j+1];
-                    arr[j+1] = arr[j];
-                    arr[j] = temp;
-                }
+        maior = arr[0];
+        menor = arr[0];
+
+
+        for(int i = 1; i < conta; i++){
+            if(arr[i] >= maior){
+                maior = arr[i];
+            }
+            if(arr[i] <= menor){
+                menor = arr[i];
             }
         }
 
@@ -40,8 +43,8 @@ public class Q30 {
         System.out.printf("\nNumero de pessoas = %d\nMédia = %.2f\nMenor = %d\nMaior = %d\n",
             conta,
             media,
-            arr[0],
-            arr[conta-1]
+            menor,
+            maior
         );
 
     }
