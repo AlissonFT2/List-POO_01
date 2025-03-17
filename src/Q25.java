@@ -6,7 +6,6 @@ public class Q25 {
         Scanner Teclado = new Scanner(System.in);
 
         int arr_size = 10;
-        int maior, menor;
         int sum = 0;
         float media = 0;
 
@@ -20,11 +19,24 @@ public class Q25 {
 
         Teclado.close();
 
-        maior = arr[0];
-        menor = arr[0];
+        int[] maiorMenor = maiorMenor(arr);
 
+        media = (float) sum / arr_size;
 
-        for(int i = 1; i < arr_size; i++){
+        System.out.printf(
+            "\nMaior = %d\nMenor = %d\nSoma = %d\nMédia = %.2f\n",
+            maiorMenor[0], 
+            maiorMenor[1],
+            sum,
+            media
+        );
+    }
+
+    public static int[] maiorMenor(int[] arr){
+        int maior = arr[0];
+        int menor = arr[0];
+
+        for(int i = 1; i < arr.length; i++){
             if(arr[i] >= maior){
                 maior = arr[i];
             }
@@ -33,14 +45,6 @@ public class Q25 {
             }
         }
 
-        media = (float) sum / arr_size;
-
-        System.out.printf(
-            "\nMaior = %d\nMenor = %d\nSoma = %d\nMédia = %.2f\n",
-            maior, 
-            menor,
-            sum,
-            media
-        );
+        return new int[]{maior, menor};
     }
 }

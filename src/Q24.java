@@ -6,7 +6,6 @@ public class Q24 {
         Scanner Teclado = new Scanner(System.in);
 
         int arr_size = 3;
-        int maior, menor;
 
         int[] arr = new int[arr_size];
 
@@ -16,12 +15,17 @@ public class Q24 {
         }
 
         Teclado.close();
-        
-        maior = arr[0];
-        menor = arr[0];
 
+        int[] maiorMenor = maiorMenor(arr);
 
-        for(int i = 1; i < arr_size; i++){
+        System.out.printf("\nMaior = %d\nMenor = %d\n",maiorMenor[0], maiorMenor[1]);
+    }
+
+    public static int[] maiorMenor(int[] arr){
+        int maior = arr[0];
+        int menor = arr[0];
+
+        for(int i = 1; i < arr.length; i++){
             if(arr[i] >= maior){
                 maior = arr[i];
             }
@@ -30,6 +34,8 @@ public class Q24 {
             }
         }
 
-        System.out.printf("\nMaior = %d\nMenor = %d\n",maior, menor);
+        return new int[]{maior, menor};
     }
+
+
 }
