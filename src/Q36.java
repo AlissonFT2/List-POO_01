@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Q36 {
-        public static void main(String[] args){
+    public static void main(String[] args){
 
         Scanner Teclado = new Scanner(System.in);
         
@@ -18,16 +18,17 @@ public class Q36 {
 
         Teclado.close();
 
-        for(int i = primeiroVetor.length - 1; i >= 0; i--){
-            System.out.printf("%d ", primeiroVetor[i]);
-        }
+        printArr(primeiroVetor);
 
         System.out.println();
 
-        for(int i = segundoVetor.length - 1; i >= 0; i--){
-            System.out.printf("%d ", segundoVetor[i]);
-        }
+        printArr(segundoVetor);
 
         System.out.println();
+    }
+    public static void printArr(int[] arr){
+        for(int i = arr.length - 1; i >= 0; i--){
+            System.out.printf("%d ", arr[i]);
+        }
     }
 }

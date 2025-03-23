@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Q33 {
-        public static void main(String[] args){
+    public static void main(String[] args){
 
         Scanner Teclado = new Scanner(System.in);
         int[] arr = new int[20];
@@ -21,20 +21,24 @@ public class Q33 {
             }
         }
 
-        System.out.println("Números Pares");
-        for(int i = 0; i < conta_par; i++){
-            System.out.printf("%d ",par[i]);
-        }
+        printArr("Números Pares", conta_par, par);
+        
+        System.out.println();
 
-        System.out.println("\nNúmeros Impares");
-
-        for(int i = 0; i < conta_impar; i++){
-            System.out.printf("%d ",impar[i]);
-        }
+        printArr("Números Impares", conta_impar, impar);
 
         System.out.println();
 
+        printArr("Todos os Números", 20, arr);
+
         Teclado.close();
 
+    }
+    public static void printArr(String mensagem, int conta, int[] arr){
+        System.out.println(mensagem);
+
+        for(int i = 0; i < conta; i++){
+            System.out.printf("%d ",arr[i]);
+        }
     }
 }

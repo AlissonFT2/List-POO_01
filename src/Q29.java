@@ -14,57 +14,48 @@ public class Q29 {
         String escalaDesejada = Teclado.next().toLowerCase();
         
         double resultado = 0;
-        String resultadoEscala = "";
         
         Teclado.close();
+        
 
+        resultado = converter(escalaAtual, escalaDesejada, temperatura);
+
+        System.out.printf("Resultado: %.2f %s%n", resultado, escalaDesejada);
+    }
+    public static double converter(String escalaAtual, String escalaDesejada, double temperatura){
         switch (escalaAtual) {
             case "celsius":
                 switch (escalaDesejada) {
                     case "fahrenheit":
-                        resultado = temperatura * 1.8 + 32;
-                        resultadoEscala = "Fahrenheit";
-                        break;
+                        return temperatura * 1.8 + 32;
                     case "kelvin":
-                        resultado = temperatura + 273.15;
-                        resultadoEscala = "Kelvin";
-                        break;
+                        return temperatura + 273.15;
                     default:
                         System.out.println("Escala de destino inválida!");
-                        return;
+                        return Double.NaN;
                 }
-                break;
             case "fahrenheit":
                 switch (escalaDesejada) {
                     case "celsius":
-                        resultado = (temperatura - 32) / 1.8;
-                        resultadoEscala = "Celsius";
-                        break;
+                        return (temperatura - 32) / 1.8;
                     default:
                         System.out.println("Escala de destino inválida!");
-                        return;
+                        return Double.NaN;
                 }
-                break;
             case "kelvin":
                 switch (escalaDesejada) {
                     case "celsius":
-                        resultado = temperatura - 273.15;
-                        resultadoEscala = "Celsius";
-                        break;
+                        return temperatura - 273.15;
                     case "fahrenheit":
-                        resultado = 1.8 * (temperatura - 273) + 32;
-                        resultadoEscala = "Fahrenheit";
-                        break;
+                        return 1.8 * (temperatura - 273) + 32;
                     default:
                         System.out.println("Escala de destino inválida!");
-                        return;
+                        return Double.NaN;
                 }
-                break;
             default:
                 System.out.println("Escala de origem inválida!");
-                return;
+                return Double.NaN; 
         }
-        
-        System.out.printf("Resultado: %.2f %s%n", resultado, resultadoEscala);
     }
 }
+

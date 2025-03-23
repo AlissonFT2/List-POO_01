@@ -1,29 +1,16 @@
 import java.util.Scanner;
 
 public class Q37 {
-        public static void main(String[] args){
+    public static Scanner Teclado = new Scanner(System.in);
+    public static void main(String[] args){
 
-        Scanner Teclado = new Scanner(System.in);
-        
-        int[] primeiroVetor = new int[10];
-        int[] segundoVetor = new int[10];
-        int[] compostoVetor = new int[20];
+        int[] primeiroVetor = preencheVetor("Primeiro Vetor", 10);
 
-        System.out.println("Primeiro Vetor");
-
-        for(int i = 0; i < primeiroVetor.length; i++){
-            System.out.printf("Digite o %dº número: ",i+1);
-            primeiroVetor[i] = Teclado.nextInt();
-        }
-
-        System.out.println("Segundo Vetor");
-
-        for(int i = 0; i < primeiroVetor.length; i++){
-            System.out.printf("Digite o %dº número: ",i+1);
-            segundoVetor[i] = Teclado.nextInt();
-        }
+        int[] segundoVetor = preencheVetor("Segundo Vetor", 10);
 
         Teclado.close();
+
+        int[] compostoVetor = new int[segundoVetor.length + primeiroVetor.length];
 
         int k = 0;
         for (int j = 0; j < primeiroVetor.length; j++) {
@@ -38,5 +25,17 @@ public class Q37 {
         }
 
         System.out.println();
+    }
+    public static int[] preencheVetor(String mensagem, int tamanho){
+        int[] vetor = new int[tamanho];
+        
+        System.out.println(mensagem);
+
+        for(int i = 0; i < vetor.length; i++){
+            System.out.printf("Digite o %dº número: ",i+1);
+            vetor[i] = Teclado.nextInt();
+        }
+
+        return vetor;
     }
 }

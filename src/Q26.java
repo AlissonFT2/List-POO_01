@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Q26 {
-        public static void main(String[] args){
+    public static void main(String[] args){
 
         Scanner Teclado = new Scanner(System.in);
         
@@ -23,11 +23,15 @@ public class Q26 {
             }
         }
 
+        primo(ePrimo, num);
+
+    }
+
+    public static void primo(boolean ePrimo, int num){
         if (ePrimo) {
             System.out.println(num + " é um número primo.");
         } else {
             System.out.println(num + " não é um número primo.");
         }
-
     }
 }

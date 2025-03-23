@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Q30 {
-        public static void main(String[] args){
+    public static void main(String[] args){
 
         Scanner Teclado = new Scanner(System.in);
         int conta = 0, soma_idade = 0;

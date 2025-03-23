@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Q32 {
-        public static void main(String[] args){
+    public static void main(String[] args){
 
         Scanner Teclado = new Scanner(System.in);
         int[] triangulo = new int[3];
@@ -13,6 +13,10 @@ public class Q32 {
 
         Teclado.close();
 
+        triangulo(triangulo);
+
+    }
+    public static void triangulo(int[] triangulo){
         if(
             triangulo[0] < triangulo[1] + triangulo[2] &&
             triangulo[1] < triangulo[0] + triangulo[2] &&
@@ -39,6 +43,5 @@ public class Q32 {
         } else {
             System.out.println("Os lados digitados não formam um triangulo");
         }
-
     }
 }

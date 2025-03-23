@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Q35 {
-        public static void main(String[] args){
+    public static void main(String[] args){
 
         Scanner Teclado = new Scanner(System.in);
 
@@ -20,11 +20,15 @@ public class Q35 {
 
 
         System.out.println("Números Digitados");
+        
+        printArr(numeros);
 
+
+        System.out.printf("\nSoma = %d,\nMultiplicação = %d\n",soma,mult);    
+    }
+    public static void printArr(int[] numeros){
         for(int i = 0; i < numeros.length; i++){
             System.out.printf("%d ",i);
         }
-
-        System.out.printf("\nSoma = %d,\nMultiplicação = %d\n",soma,mult);    
     }
 }
