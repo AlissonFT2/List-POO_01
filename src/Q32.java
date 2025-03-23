@@ -8,7 +8,15 @@ public class Q32 {
 
         for(int i = 0; i < triangulo.length; i++){
             System.out.printf("Digite o %dº lado: ",i+1);
-            triangulo[i] = Teclado.nextInt();
+            int valor = Teclado.nextInt();
+
+            while(valor <= 0){
+                System.out.println("Mediada invalida digite novamente");
+                System.out.printf("Digite o %dº lado: ",i+1);
+                valor = Teclado.nextInt();
+            }
+
+            triangulo[i] = valor;
         }
 
         Teclado.close();
